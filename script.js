@@ -71,3 +71,26 @@ categoryFilterSelect.addEventListener('change', () => {
 
     renderFilteredExpenses(filteredExpenses);
 });
+
+dateFilterInput.addEventListener('input', () => {
+    const date = dateFilterInput.value;
+    const filteredExpenses = date
+       ? expenses.filter(expense => expense.date == date)
+       : expenses;
+    
+    renderFilteredExpenses(filteredExpenses);
+});
+
+function renderFilteredExpenses(filteredExpenses) {
+    expenseList.innerHTML = '';
+    let total = 0;
+
+    filteredExpenses.forEach((expense, index) => {
+        const expenseElement = document.createElement('li');
+        expenseElement.innerHTML = `
+           <div>
+             <span>${expense.name}</span>
+             <span>$${expense.amount}</span>
+             <span>${expense.category}</span>
+             <span>${expense.date}</span>
+          </div>
