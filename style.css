@@ -77,3 +77,26 @@ li {
     justify-content: space-between;
     align-items: center;
 }
+
+li span {
+    font-weight: bold;
+}
+
+li button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding:5px 10px;
+    cursor: pointer;
+    border-Radius: 5px;
+}
+
+li button:hover {
+    background-color: #d32f2f;
+}
+
+.summary {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+}
