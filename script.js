@@ -94,3 +94,13 @@ function renderFilteredExpenses(filteredExpenses) {
              <span>${expense.category}</span>
              <span>${expense.date}</span>
           </div>
+                    <button onclick="deleteExpense(${index})">Delete</button>
+        `;
+        expenseList.appendChild(expenseElement);
+        total += parseFloat(expense.amount);
+    });
+
+    totalExpensesSpan.textContent = total.toFixed(2);
+}
+
+renderExpenses();
